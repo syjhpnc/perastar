@@ -1,469 +1,223 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페라스타 그린(Perasta Green) 상세페이지</title>
+</head>
+<body style="margin:0;padding:0;background:#fff;">
+
 <style>
-  * { box-sizing: border-box; }
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+.prs-wrap{max-width:900px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;font-family:'Pretendard',-apple-system,sans-serif;color:#2d3436;font-size:14px;line-height:1.7;}
+.prs-header{text-align:center;padding:44px 50px 40px;border-bottom:1px solid #e9ecef;}
+.prs-logo-row{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:28px;flex-wrap:nowrap;}
+.prs-logo{height:52px;width:auto;}
+.prs-omri{height:64px;width:auto;flex-shrink:0;}
+.prs-badge{display:inline-block;background:#e7f3f1;color:#268B7C;padding:7px 20px;border-radius:50px;font-size:13px;font-weight:700;margin-bottom:22px;}
+.prs-copy{font-size:20px;font-weight:400;color:#444;word-break:keep-all;margin-bottom:18px;line-height:1.8;}
+.prs-copy strong{color:#268B7C;font-weight:800;}
+.prs-pkg{font-size:13px;color:#636e72;background:#f5f7f6;padding:9px 18px;border-radius:8px;display:inline-block;}
+.prs-sec{padding:36px 50px;border-bottom:1px solid #e9ecef;}
+.prs-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.prs-num{background:#268B7C;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:800;}
+.prs-title{font-size:20px;font-weight:800;margin:0;color:#2d3436;}
+.prs-fg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.prs-fc{border:1px solid #e9ecef;border-radius:12px;padding:18px 16px;font-size:13.5px;line-height:1.6;display:flex;align-items:flex-start;gap:8px;}
+.prs-fc::before{content:"•";color:#268B7C;font-weight:900;flex-shrink:0;}
+.prs-sbox{background:#f5f7f6;border-radius:12px;padding:24px 28px;font-size:14px;color:#636e72;line-height:1.8;word-break:keep-all;}
+.prs-sbox p{margin:0 0 6px;}
+.prs-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+.prs-tag{background:#fff;border:1px solid #268B7C;color:#268B7C;border-radius:20px;padding:4px 14px;font-size:12.5px;font-weight:700;}
+.prs-dbox{background:#f5f7f6;border-radius:12px;padding:24px 28px;font-size:14px;color:#636e72;line-height:1.8;word-break:keep-all;}
+.prs-dbox p{margin:0 0 6px;}
+.prs-flow{display:flex;align-items:center;gap:10px;margin-top:20px;flex-wrap:wrap;row-gap:10px;}
+.prs-ditem{background:#fff;border:1px solid #e9ecef;border-radius:8px;padding:10px 18px;font-size:13.5px;font-weight:700;color:#2d3436;}
+.prs-darr{color:#268B7C;font-size:18px;font-weight:800;}
+.prs-dres{background:#e7f3f1;border:1px solid #268B7C;border-radius:8px;padding:10px 18px;font-size:13px;color:#268B7C;font-weight:700;}
+.prs-dbrk{flex-basis:100%;height:0;}
+.prs-ug{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.prs-ui{background:#f5f7f6;border-radius:14px;padding:24px 14px;text-align:center;border-bottom:3px solid #268B7C;font-weight:700;color:#268B7C;font-size:14px;line-height:1.6;}
+.prs-sh{font-size:15px;font-weight:700;color:#2d3436;margin:28px 0 14px;display:flex;align-items:center;gap:8px;}
+.prs-sh::before{content:"";width:4px;height:16px;background:#268B7C;border-radius:2px;display:inline-block;}
+.prs-wrap table{width:100%;border-collapse:collapse;font-size:13.5px;text-align:center;border-top:2px solid #2d3436;}
+.prs-wrap th{background:#f1f5f4;padding:13px 10px;font-weight:700;border-bottom:1px solid #e9ecef;font-size:13px;}
+.prs-wrap td{padding:13px 10px;border-bottom:1px solid #e9ecef;color:#636e72;}
+.prs-wrap td.rh{font-weight:700;color:#2d3436;background:#fafafa;}
+.prs-note-item{border:1px solid #e9ecef;padding:18px 20px;border-radius:12px;display:flex;align-items:flex-start;gap:10px;font-size:14px;margin-bottom:12px;word-break:keep-all;}
+.prs-note-item::before{content:"•";color:#268B7C;font-weight:900;flex-shrink:0;margin-top:2px;}
+.prs-dg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.prs-bdl{display:block;text-align:center;padding:16px;border:1.5px solid #268B7C;border-radius:10px;color:#268B7C;font-weight:700;font-size:13.5px;text-decoration:none;}
+.prs-csec{padding:36px 50px;border-bottom:1px solid #e9ecef;}
+.prs-cin{text-align:center;padding:40px;border:1.5px solid #e9ecef;border-radius:16px;}
+.prs-cin p{color:#636e72;margin:0 0 24px;font-size:14px;}
+.prs-bc{display:inline-block;background:#268B7C;color:#fff;font-size:16px;font-weight:700;padding:18px 56px;border-radius:12px;text-decoration:none;}
+.prs-calcsec{padding:36px 50px;}
 
-  .perasta-container {
-    max-width: 900px;
-    margin: 0px auto;
-    padding: 60px 40px;
-    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.7;
-    color: #2d3436;
-    background-color: #fff;
-  }
-
-  /* ── Header ── */
-  .perasta-header {
-    text-align: center;
-    margin-bottom: 80px;
-  }
-  .header-logo-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 25px;
-    flex-wrap: nowrap;
-  }
-  .perasta-header .omri-mark {
-    width: 70px;
-    height: auto;
-    flex-shrink: 0;
-  }
-  .perasta-header .logo {
-    max-width: 260px;
-    width: 100%;
-    height: auto;
-    flex-shrink: 1;
-  }
-  .perasta-badge {
-    display: inline-block;
-    background: #f1f5f9;
-    color: #268B7C;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
-  }
-  .perasta-header p {
-    font-size: 20px;
-    color: #555;
-    font-weight: 400;
-    max-width: 700px;
-    margin: 0 auto 20px;
-    line-height: 1.6;
-    word-break: keep-all;
-  }
-  .perasta-pkg {
-    display: inline-block;
-    border: 1px solid #dfe6e9;
-    color: #636e72;
-    font-size: 14px;
-    padding: 6px 18px;
-    border-radius: 5px;
-    background-color: #fcfcfc;
-  }
-
-  /* ── Section heading ── */
-  .section-heading {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  .section-heading h2 {
-    display: inline-block;
-    font-size: 26px;
-    font-weight: 800;
-    color: #268B7C;
-    margin: 0;
-    padding: 0 10px;
-    position: relative;
-    z-index: 1;
-  }
-  .section-heading-bar {
-    width: 100%;
-    height: 12px;
-    background: #e7f0f9;
-    margin-top: -12px;
-    border-radius: 5px;
-  }
-
-  /* ── Features grid ── */
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-  }
-  .feature-item {
-    border: 1px solid #dfe6e9;
-    padding: 18px 20px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    word-break: keep-all;
-  }
-  .feature-item .dot {
-    color: #268B7C;
-    margin-right: 12px;
-    flex-shrink: 0;
-  }
-
-  /* ── Usage cards ── */
-  .usage-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-  }
-  .usage-card {
-    flex: 1;
-    min-width: 200px;
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    color: #268B7C;
-    font-weight: 700;
-    border-left: 5px solid #268B7C;
-    text-align: center;
-  }
-
-  /* ── Table ── */
-  .table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .dilution-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-    font-size: 14px;
-    border-top: 2px solid #2d3436;
-  }
-  .dilution-table thead {
-    background: #f1f5f9;
-  }
-  .dilution-table th,
-  .dilution-table td {
-    padding: 15px;
-    border-bottom: 1px solid #dfe6e9;
-  }
-  .dilution-table td:first-child {
-    background: #fafafa;
-    font-weight: 600;
-  }
-
-  /* ── Note items ── */
-  .note-item {
-    border: 1px solid #dfe6e9;
-    padding: 18px 20px;
-    border-radius: 12px;
-    display: flex;
-    align-items: flex-start;
-    font-size: 15px;
-    margin-bottom: 12px;
-    word-break: keep-all;
-  }
-  .note-item .dot {
-    color: #268B7C;
-    margin-right: 12px;
-    margin-top: 3px;
-    flex-shrink: 0;
-  }
-
-  /* ── Download buttons ── */
-  .download-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .download-btn {
-    flex: 1;
-    min-width: 140px;
-    padding: 20px 10px;
-    background: #268B7C;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    border: 1px solid #268B7C;
-    font-weight: bold;
-    border-radius: 8px;
-    font-size: 14px;
-    word-break: keep-all;
-  }
-
-  /* ── Contact CTA ── */
-  .contact-box {
-    background: #f1f5f9;
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: 15px;
-    border: 1px solid #d1d9e0;
-  }
-  .contact-btn {
-    display: inline-block;
-    background: #268B7C;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 18px 60px;
-    border-radius: 8px;
-  }
-
-  /* ── Calculator iframe ── */
-  .calc-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background: transparent;
-    padding: 0;
-  }
-  .calc-inner {
-    width: 100%;
-    max-width: 500px;
-    height: 820px;
-    overflow: hidden;
-    position: relative;
-  }
-  .calc-inner iframe {
-    width: 100%;
-    height: 850px;
-    border: none;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  /* ── Sub-section heading ── */
-  .sub-heading {
-    font-size: 18px;
-    margin-bottom: 20px;
-    border-left: 4px solid #268B7C;
-    padding-left: 12px;
-    color: #333;
-  }
-
-  /* ── Mobile overrides ── */
-  @media (max-width: 600px) {
-    .perasta-container {
-      margin: 0;
-      padding: 30px 18px;
-    }
-    .perasta-header {
-      margin-bottom: 50px;
-    }
-    .header-logo-row {
-      flex-direction: column;
-      gap: 12px;
-    }
-    .perasta-header .logo {
-      max-width: 220px;
-    }
-    .perasta-header .omri-mark {
-      width: 55px;
-    }
-    .perasta-header p {
-      font-size: 16px;
-    }
-    .perasta-badge {
-      font-size: 12px;
-      padding: 7px 14px;
-    }
-    .section-heading h2 {
-      font-size: 20px;
-    }
-    .features-grid {
-      grid-template-columns: 1fr;
-    }
-    .feature-item {
-      font-size: 14px;
-    }
-    .usage-card {
-      min-width: 100%;
-    }
-    .download-grid {
-      flex-direction: column;
-    }
-    .download-btn {
-      min-width: 100%;
-      padding: 16px 10px;
-    }
-    .contact-btn {
-      font-size: 16px;
-      padding: 16px 30px;
-    }
-    .calc-inner {
-      height: 760px;
-    }
-    .calc-inner iframe {
-      height: 790px;
-    }
-    .dilution-table {
-      font-size: 13px;
-    }
-    .dilution-table th,
-    .dilution-table td {
-      padding: 12px 10px;
-    }
-  }
-
-  @media (max-width: 400px) {
-    .perasta-container {
-      padding: 20px 14px;
-    }
-  }
+@media(max-width:768px){
+  .prs-header{padding:44px 20px;}
+  .prs-sec,.prs-csec,.prs-calcsec{padding:36px 20px;}
+  .prs-fg{grid-template-columns:repeat(2,1fr);}
+  .prs-ug{grid-template-columns:repeat(2,1fr);}
+  .prs-dg{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:500px){
+  .prs-wrap{border-radius:0;}
+  .prs-header{padding:32px 16px;}
+  .prs-sec,.prs-csec,.prs-calcsec{padding:28px 16px;}
+  .prs-copy{font-size:16px;}
+  .prs-title{font-size:17px;}
+  .prs-fg{grid-template-columns:repeat(2,1fr);gap:8px;}
+  .prs-fc{font-size:12.5px;padding:14px 12px;}
+  .prs-ug{grid-template-columns:repeat(2,1fr);gap:10px;}
+  .prs-ui{font-size:13px;padding:18px 10px;}
+  .prs-dg{grid-template-columns:repeat(2,1fr);}
+  .prs-flow{gap:6px;}
+  .prs-ditem{font-size:12px;padding:8px 12px;}
+  .prs-darr{font-size:14px;}
+  .prs-dres{font-size:12px;padding:8px 12px;}
+  .prs-tag{font-size:12px;padding:4px 10px;}
+  .prs-wrap table{font-size:12px;}
+  .prs-wrap th,.prs-wrap td{padding:10px 8px;}
+  .prs-cin{padding:20px 16px;}
+  .prs-bc{font-size:14px;padding:14px 28px;}
+}
 </style>
 
-<div class="perasta-container">
+<div class="prs-wrap">
 
-  <!-- Header -->
-  <header class="perasta-header">
-    <div class="header-logo-row">
-      <img class="logo"
-           src="https://ik.imagekit.io/syjhpnc/페라스타 그린 로고.PNG"
+    <!-- HEADER -->
+    <div class="prs-header">
+    <div class="prs-logo-row">
+      <img class="prs-logo"
+           src="https://ik.imagekit.io/syjhpnc/%ED%8E%98%EB%9D%BC%EC%8A%A4%ED%83%80%20%EA%B7%B8%EB%A6%B0%20%EB%9D%BC%EB%B2%A8.png"
            alt="페라스타 그린 로고">
-      <img class="omri-mark"
-           src="https://ik.imagekit.io/syjhpnc/회사 소개용 - OMRI 인증마크 - 웹용.jpg"
+      <img class="prs-omri"
+           src="https://ik.imagekit.io/syjhpnc/%EC%A0%9C%ED%92%88%EC%9A%A9%20-%20OMRI%20%EC%9D%B8%EC%A6%9D%EB%A7%88%ED%81%AC%20%EC%84%A4%EB%AA%85%20%EC%9E%88%EC%9D%8C%20-%20%EC%9B%B9%EC%9A%A9.jpg?updatedAt=1774828731883"
            alt="OMRI 인증마크">
-    </div>
-    <span class="perasta-badge">과산화초산 5.6% / OMRI 인증 / HEDP 無첨가</span>
-    <p>
-      <strong style="color:#268B7C; font-weight:800;">페라스타 그린</strong>은 과산화초산 5.6%의 과산화초산제제로,<br>
-      기구 등의 살균소독에 최적화된 <strong style="color:#000; font-weight:800;">친환경 살균제입니다.</strong>
-    </p>
-    <div>
-      <span class="perasta-pkg">
-        <strong style="color:#2d3436;">포장단위</strong>
-        <span style="margin:0 10px; color:#b2bec3;">|</span>
-        1L · 5L · 20L · 1,000L
-      </span>
-    </div>
-  </header>
-
-  <!-- 주요 특징 -->
-  <section style="margin-bottom:80px;">
-    <div class="section-heading">
-      <h2>주요 특징</h2>
-      <div class="section-heading-bar"></div>
-    </div>
-    <div class="features-grid">
-      <div class="feature-item"><span class="dot">●</span>세균, 바이러스, 진균, 아포균에 효과적</div>
-      <div class="feature-item"><span class="dot">●</span>OMRI 인증 제품</div>
-      <div class="feature-item"><span class="dot">●</span>바이오필름 제거에 효과적</div>
-      <div class="feature-item"><span class="dot">●</span>단시간에 강력한 살균 효과 발휘</div>
-      <div class="feature-item"><span class="dot">●</span>환경 영향(유기물, 온도)이 적음</div>
-      <div class="feature-item"><span class="dot">●</span>소독 부산물 및 거품 발생 없음</div>
-      <div class="feature-item"><span class="dot">●</span>사용 후 필수 제거 공정 미요구</div>
-      <div class="feature-item"><span class="dot">●</span>KGMP 인증 시설에서 생산</div>
-    </div>
-  </section>
-
-  <!-- 주요 용도 -->
-  <section style="margin-bottom:80px;">
-    <div class="section-heading">
-      <h2>주요 용도</h2>
-      <div class="section-heading-bar"></div>
-    </div>
-    <div class="usage-list">
-      <div class="usage-card">식품 조리·판매용 기구 등의 살균·소독</div>
-      <div class="usage-card">유가공용 기구 등의 살균·소독</div>
-      <div class="usage-card">식품 등 제조·가공·소분용 기구 등의 살균·소독</div>
-      <div class="usage-card">식품용 용기·포장의 멸균</div>
-    </div>
-  </section>
-
-  <!-- 사용 방법 및 희석 비율 -->
-  <section style="margin-bottom:80px;">
-    <div class="section-heading">
-      <h2>사용 방법 및 희석 비율</h2>
-      <div class="section-heading-bar"></div>
+        </div>
+        <span class="prs-badge">과산화초산 5.6% / OMRI 인증 / HEDP 無첨가</span>
+        <p class="prs-copy">
+            <strong>페라스타 그린</strong>은 과산화초산 5.6%의 과산화초산제제로, <br>기구 등의 살균·소독에 최적화된 <strong>친환경 살균제입니다.</strong>
+        </p>
+        <div class="prs-pkg"><strong>포장단위</strong> &nbsp;|&nbsp; 1L · 5L · 20L · 1,000L</div>
     </div>
 
-    <div style="margin-bottom:45px;">
-      <h3 class="sub-heading">✔ 기구 등의 살균소독제</h3>
-      <div class="table-wrap">
-        <table class="dilution-table">
-          <thead>
-            <tr>
-              <th>구분</th>
-              <th>식품 조리·판매용</th>
-              <th>유가공용</th>
-              <th>제조·가공·소분용</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>희석 비율</td>
-              <td>2,320배 이상</td>
-              <td>455배 이상</td>
-              <td>195배 이상</td>
-            </tr>
-            <tr>
-              <td>과산화초산 농도</td>
-              <td>24 ppm 이하</td>
-              <td>123 ppm 이하</td>
-              <td>287 ppm 이하</td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- 01 주요 특징 -->
+    <div class="prs-sec">
+        <div class="prs-head"><span class="prs-num">01</span><h2 class="prs-title">주요 특징</h2></div>
+        <div class="prs-fg">
+            <div class="prs-fc">OMRI 인증 제품</div>
+            <div class="prs-fc">바이오필름 제거에 효과적</div>
+            <div class="prs-fc">광범위한 살균 스펙트럼</div>
+            <div class="prs-fc">단시간에 강력한 살균 효과 발휘</div>
+            <div class="prs-fc">환경 영향(유기물, 온도)이 적음</div>
+            <div class="prs-fc">사용 후 필수 제거 공정 미요구</div>
+            <div class="prs-fc">소독 부산물 및 거품 발생 없음</div>
+            <div class="prs-fc">식품접촉 기구 살균소독</div>
+        </div>
+    </div>
+
+    <!-- 02 살균 스펙트럼 -->
+    <div class="prs-sec">
+        <div class="prs-head"><span class="prs-num">02</span><h2 class="prs-title">광범위한 살균 스펙트럼</h2></div>
+        <div class="prs-sbox">
+            <p>페라스타 그린(과산화초산)은 특정 균에 국한되지 않는 광범위 살균제입니다.</p>
+            <p>특히 일반적인 살균제로 제거하기 어려운 포자에도 신속하고 효과적인 살균력을 발휘합니다.</p>
+            <div class="prs-tags">
+                <span class="prs-tag">세균</span>
+                <span class="prs-tag">바이러스</span>
+                <span class="prs-tag">진균(곰팡이)</span>
+                <span class="prs-tag">아포균(내성 포자)</span>
+                <span class="prs-tag">바이오필름</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 03 분해 특성 -->
+    <div class="prs-sec">
+        <div class="prs-head"><span class="prs-num">03</span><h2 class="prs-title">분해 특성</h2></div>
+        <div class="prs-dbox">
+            <p>페라스타 그린(과산화초산)은 사용(살균 작용) 후 자연적으로 물, 산소, 아세트산으로 분해됩니다.</p>
+            <p>이러한 분해 특성으로 유해한 소독 부산물이 생성되지 않는 친환경 살균제로 평가됩니다.</p>
+            <div class="prs-flow">
+                <div class="prs-ditem">페라스타 그린(과산화초산)</div>
+                <div class="prs-darr">→</div>
+                <div class="prs-ditem">물 (H₂O)</div>
+                <div class="prs-darr">+</div>
+                <div class="prs-ditem">산소 (O₂)</div>
+                <div class="prs-darr">+</div>
+                <div class="prs-ditem">아세트산 (CH₃COOH)</div>
+                <div class="prs-dbrk"></div>
+                <div class="prs-darr">→</div>
+                <div class="prs-dres">유해 잔류물 없음</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 04 주요 용도 -->
+    <div class="prs-sec">
+        <div class="prs-head"><span class="prs-num">04</span><h2 class="prs-title">주요 용도</h2></div>
+        <div class="prs-ug">
+            <div class="prs-ui">식품 조리·판매용<br> 기구 등의 살균·소독</div>
+            <div class="prs-ui">유가공용<br> 기구 등의 살균·소독</div>
+            <div class="prs-ui">식품 등 제조·가공·소분용<br> 기구 등의 살균·소독</div>
+            <div class="prs-ui">식품용 용기·포장의 멸균</div>
+        </div>
+    </div>
+
+    <!-- 05 사용 방법 및 희석 비율 -->
+    <div class="prs-sec">
+        <div class="prs-head"><span class="prs-num">05</span><h2 class="prs-title">사용 기준 및 희석 비율</h2></div>
+
+
+    <div class="prs-sh">기구 등의 살균소독제</div>
+    <div style="overflow-x:auto;margin-bottom:28px;">
+      <table>
+        <thead>
+          <tr><th>구분</th><th>식품 조리·판매용</th><th>유가공용</th><th>제조·가공·소분용</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="rh">희석 비율</td><td>2,320배 이상</td><td>455배 이상</td><td>195배 이상</td></tr>
+          <tr><td class="rh">과산화초산 농도</td><td>24 ppm 이하</td><td>123 ppm 이하</td><td>287 ppm 이하</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prs-sh" style="margin-top:32px;">소독 시 일반 사용방법</div>
+    <div class="prs-note-item">
+      희석액에 담근 후 표면에 남은 용액이 식품과 접촉하기 전에 가볍게 털어내거나 흘려 보낸 뒤 자연건조 한다.
       </div>
+     </div>
     </div>
-   </div>
-  </section>
 
-  <!-- 관련자료 다운로드 -->
-  <section style="margin-bottom:80px;">
-    <div class="section-heading">
-      <h2>관련자료 다운로드</h2>
-      <div class="section-heading-bar"></div>
+    <!-- 06 관련자료 다운로드 -->
+    <div class="prs-sec">
+        <div class="prs-head"><span class="prs-num">06</span><h2 class="prs-title">관련자료 다운로드</h2></div>
+        <div class="prs-dg">
+            <a href="#" class="prs-bdl">품목제조보고서</a>
+            <a href="#" class="prs-bdl">자가품질성적서</a>
+            <a href="#" class="prs-bdl">MSDS</a>
+        </div>
     </div>
-    <div class="download-grid">
-      <a class="download-btn"
-         href="http://perastar.webmind.kr/manager/data/download.php?file1=페라스타10_품목제조보고_1773990715_915.pdf&f_folder=2026&fileName=페라스타10 품목제조보고.pdf"
-         target="_blank">품목제조보고서</a>
-      <a class="download-btn"
-         href="http://perastar.webmind.kr/manager/data/download.php?file1=페라스타10_자가품질_성적서_1773987338_617.pdf&f_folder=2026&fileName=페라스타10 자가품질 성적서.pdf"
-         target="_blank">자가품질성적서</a>
-      <a class="download-btn"
-         href="http://perastar.webmind.kr/manager/data/download.php?file1=페라스타10_msds_1773987290_239.pdf&f_folder=2026&fileName=페라스타10 msds.pdf"
-         target="_blank">MSDS</a>
-      <a class="download-btn" href="#" target="_blank">OMRI 인증서</a>
-    </div>
-  </section>
 
-  <!-- 전문 상담 및 견적 문의 -->
-  <section style="margin-bottom:80px;">
-    <div class="section-heading">
-      <h2>전문 상담 및 견적 문의</h2>
-      <div class="section-heading-bar"></div>
+    <!-- 07 전문 상담 및 견적 문의 -->
+    <div class="prs-csec">
+        <div class="prs-head"><span class="prs-num">07</span><h2 class="prs-title">전문 상담 및 견적 문의</h2></div>
+        <div class="prs-cin">
+            <p>대량 구매 및 도입 관련 상세 견적을 안내해 드립니다.</p>
+            <a href="http://perastar.webmind.kr/common/contact/write.php" target="_blank" class="prs-bc">실시간 견적 문의하기</a>
+        </div>
     </div>
-    <div class="contact-box">
-      <p style="font-size:16px; color:#666; margin-bottom:35px;">대량 구매 및 도입 관련 상세 견적을 안내해 드립니다.</p>
-      <a class="contact-btn"
-         href="http://perastar.webmind.kr/common/contact/write.php"
-         target="_blank">실시간 견적 문의하기</a>
-    </div>
-  </section>
 
-  <!-- 희석계산기 -->
-  <section style="margin-bottom:60px;">
-    <div class="section-heading">
-      <h2>희석계산기</h2>
-      <div class="section-heading-bar" style="margin-top:-15px;"></div>
+    <!-- 08 희석 계산기 -->
+    <div class="prs-calcsec">
+        <div class="prs-head"><span class="prs-num">08</span><h2 class="prs-title">희석 계산기</h2></div>
+        <iframe src="https://syjhpnc.github.io/perastar/페라스타 그린 계산기" title="페라스타 희석계산기" scrolling="no"
+                style="width:100%;height:500px;border:none;border-radius:12px;background:#f5f7f6;"></iframe>
     </div>
-    <p style="text-align:center; font-size:13px; color:#888; margin-top:10px;">
-      ※ 위 도구를 사용하여 제품별 권장 희석량을 간편하게 계산할 수 있습니다.
-    </p>
-    <div class="calc-wrapper">
-      <div class="calc-inner">
-        <iframe src="https://syjhpnc.github.io/perastar/페라스타 그린 계산기.html"
-                title="페라스타 희석계산기"
-                scrolling="no"></iframe>
-      </div>
-    </div>
-  
+
 </div>
+
+</body>
+</html>
